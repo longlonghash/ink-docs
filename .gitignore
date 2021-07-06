@@ -1,0 +1,7 @@
+*.swp
+.vscode
+.DS_Store
+.idea/
+.docusaurus/
+node_modules/
+

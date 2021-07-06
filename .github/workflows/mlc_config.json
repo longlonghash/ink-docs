@@ -1,0 +1,18 @@
+{
+  "replacementPatterns": [
+    {
+      "pattern": "^/",
+      "replacement": "https://longlonghash.io/"
+    }
+  ],
+  "httpHeaders": [
+    {
+      "urls": [
+        "https://crates.io"
+      ],
+      "headers": {
+        "Accept": "text/html"
+      }
+    }
+  ]
+}

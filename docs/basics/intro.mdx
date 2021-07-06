@@ -1,0 +1,66 @@
+---
+title: SS58 & Subkey
+slug: /ss58
+---
+
+### Reference
+- [Polkadot.js API](https://polkadot.js.org/docs/api/)
+- [Subkey (substrate.dev)](https://substrate.dev/docs/en/knowledgebase/integrate/subkey)
+- [Subkey (substrate-developer-hub.github.io)](https://github.com/substrate-developer-hub/substrate-developer-hub.github.io/edit/source/docs/knowledgebase/integrate/subkey.md)
+- [SS58 (substrate-developer-hub.github.io)](https://github.com/substrate-developer-hub/substrate-developer-hub.github.io/edit/source/docs/knowledgebase/advanced/ss58-address-format.md)
+- [SS58地址格式](https://substrate.dev/docs/zh-CN/knowledgebase/advanced/ss58-address-format)
+
+### SS58 Check & Verify
+
+官方文档给出的 JS 检验代码有些错误，比如0x1dec传入后，给出的结果为 "True" ，这是不对的。
+
+通过 subkey inspect 0x1dec 命令，可得出 "False" 。
+
+```bash
+subkey inspect 0x67363fa1c611ad40750a429c2d658f0c974ca2f845aff840b4f4a6ef1243cc6d ## True
+subkey inspect gD16jVQ6bp7GYcVzgJ5qaeRNbpC2cTBpott8c4mpPb64LPB ## True
+subkey inspect 0x1dec ## False
+```
+
+可将以上地址分别代入进行测试：
+
+```javascript
+// Import Polkadot.js API dependencies.
+const { decodeAddress, encodeAddress } = require("@polkadot/keyring");
+const { hexToU8a, isHex } = require("@polkadot/util");
+
+// Specify an address to test.
+const address = "<addressToTest>";
+
+// Check address.
+const isValidSubstrateAddress = () => {
+  try {
+    encodeAddress(isHex(address) ? hexToU8a(address) : decodeAddress(address));
+
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+// Query result.
+const isValid = isValidSubstrateAddress();
+console.log(isValid);
+```
+
+### Subkey
+
+_Install Command:_
+```bash
+# Use the `--fast` flag to get the dependencies without needing to install the Substrate and Subkey binary
+curl https://getsubstrate.io -sSf | bash -s -- --fast 
+# Install only `subkey`, at a specific version
+cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.1 --locked
+```
+
+_Install Command:_
+```bash
+# Run this in the Substrate working directory
+cargo build -p subkey --release
+```
+
