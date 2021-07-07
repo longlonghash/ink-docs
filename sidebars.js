@@ -10,6 +10,7 @@ module.exports = {
     '基础知识': [
       'basics/account',
       'basics/intro',
+      'basics/rlp',
       // 'getting-started/creating',
       // 'getting-started/compiling',
       // 'getting-started/running',
