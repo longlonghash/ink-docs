@@ -1,6 +1,6 @@
 ---
 title: RLP编码
-slug: /account
+slug: /rlp
 ---
 ### Reference
 
@@ -71,7 +71,8 @@ RLP只针对Bytes和List进行编码和解码，但并不知道Bytes自身代表
 
 ### 练习实践：
 
-python3/pip3环境
+```python
+## python3/pip3环境
 
 pip install rlp==0.6.0
 
@@ -82,7 +83,7 @@ list123 = [ [ ], [ [ ] ], [ [ ], [ [ ] ] ] ]
 rlp.encode(list123)  ## b'\xc7\xc0\xc1\xc0\xc3\xc0\xc1\xc0'
 
 rlp.encode( [ "cat", "dog" ] ) ## b'\xc8\x83cat\x83dog'
-
+```
 
 
 
