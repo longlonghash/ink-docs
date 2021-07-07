@@ -1,5 +1,5 @@
 ---
-title: RLP编码
+title: RLP 编码
 slug: /rlp
 ---
 ### Reference
@@ -84,7 +84,4 @@ rlp.encode(list123)  ## b'\xc7\xc0\xc1\xc0\xc3\xc0\xc1\xc0'
 
 rlp.encode( [ "cat", "dog" ] ) ## b'\xc8\x83cat\x83dog'
 ```
-
-
-
 
