@@ -7,7 +7,7 @@ module.exports = {
   url: 'https://github.com/longlonghash/ink',
   baseUrl: BASE_URL,
   onBrokenLinks: 'throw',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/cell.jpg',
   organizationName: 'longlonghash',
   onBrokenLinks: 'warn',
   projectName: 'ink-docs',
