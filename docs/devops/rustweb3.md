@@ -30,7 +30,7 @@ let contract = Contract::deploy(web3.eth(), include_bytes!("../src/contract/res/
     .confirmations(1)
     .options(Options::with(|opt| {
         opt.value = Some(0.into());
-        opt.gas_price = Some(1.into());
+        opt.gas_price = Some(5.into());
         opt.gas = Some(3_000_000.into());
     }))
     .execute(
