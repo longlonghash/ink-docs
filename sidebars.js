@@ -63,7 +63,7 @@ module.exports = {
     '开发运维（DevOps）': [
       // 'canvas/overview',
       // 'datastructures/opting-out',
-      'devops/intro',
+      'devops/rustweb3',
     ],
     '发明与设计': [
       // 'canvas/overview',
