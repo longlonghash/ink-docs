@@ -1,5 +1,5 @@
 ---
-title: rust-web3 应用示例
+title: Rust-Web3 应用示例
 slug: /rustweb3
 ---
 ### Reference
