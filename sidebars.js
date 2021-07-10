@@ -35,7 +35,7 @@ module.exports = {
       'public/intro',
     ],
     '桥与跨链': [
-      'bridge/intro',
+      'bridge/atomic',
       // 'cargo-contract/overview',
     ],
     '存储类公链': [
