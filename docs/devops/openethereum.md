@@ -3,13 +3,13 @@ title: OpenEthereum 编译部署
 slug: /oe
 ---
 ### Reference
-[OE Github](https://github.com/openethereum/openethereum)
+- [OE Github](https://github.com/openethereum/openethereum)
 
-[OE Wiki](https://openethereum.github.io)
+- [OE Wiki](https://openethereum.github.io)
 
-[PoA Demo](https://openethereum.github.io/Demo-PoA-tutorial)
+- [PoA Demo](https://openethereum.github.io/Demo-PoA-tutorial)
 
-[Dev Mode](https://openethereum.github.io/Private-development-chain)
+- [Dev Mode](https://openethereum.github.io/Private-development-chain)
 
 ### 编译运行 openethereum (OE)
 下载源码，并编译出debug与release版本的OE，注意采用合适的编译器版本：
@@ -35,7 +35,9 @@ cargo +nightly-2020-10-06 build --release --features final
 - 启动上述 3 个节点对应的 3 个节点进程，构建出本地测试链
 - 用 curl 命令，通过 RPC 接口与链进行交互
 
-> 搭建过程分为两大部分：准备阶段与运行阶段。在准备阶段用到的所有配置文件，是为了临时构建节点或用户账户/密钥，在运行阶段需要采取新的配置文件（文件名含 ok 字样）。
+> 搭建过程分为两大部分：准备阶段，运行阶段。在准备阶段用到的所有配置文件，是为了临时启动节点，创建账户与密钥，账户地址信息需填写到运行阶段的新配置文件中（文件名含 ok 字样）。
+> 
+> 所有配置文件，可执行 git clone https://github.com/longlonghash/openethereum-poa-demo.git 获取到。
 
 ### 准备阶段
 
@@ -139,15 +141,15 @@ disable = true
 
 ```shell
 curl --data '{"jsonrpc":"2.0","method":"parity_newAccountFromPhrase","params":["user", "123456"],"id":0}' \
--H "Content-Type: application/json" -X POST localhost:8540
+     -H "Content-Type: application/json" -X POST localhost:8540
 ## Returned address should be 0x004ec07d2329997267ec62b4166639513386f32e
 
 curl --data '{"jsonrpc":"2.0","method":"parity_newAccountFromPhrase","params":["node0", "123456"],"id":0}' \
--H "Content-Type: application/json" -X POST localhost:8540
+     -H "Content-Type: application/json" -X POST localhost:8540
 ## Returned address should be 0x00bd138abd70e2f00903268f3db08f2d25677c9e
 
 curl --data '{"jsonrpc":"2.0","method":"parity_newAccountFromPhrase","params":["node1", "123456"],"id":0}' \
--H "Content-Type: application/json" -X POST localhost:8541
+     -H "Content-Type: application/json" -X POST localhost:8541
 ## Returned address should be 0x00aa39d30f0d20ff03a22ccfc30b7efbfca597c2
 ```
 
@@ -217,7 +219,7 @@ apis = ["web3", "eth", "net", "personal", "parity", "parity_set", "traces", "rpc
 [websockets]
 port = 8450
 [account]
-password = "123456"
+password = ["node.pwds"]
 [mining]
 engine_signer = "0x00Bd138aBD70e2F00903268F3Db08f2D25677C9e"
 reseal_on_txs = "none"
@@ -239,7 +241,7 @@ port = 8451
 [ipc]
 disable = true
 [account]
-password = "123456"
+password = ["node.pwds"]
 [mining]
 engine_signer = "0x00Aa39d30F0D20FF03a22cCfc30B7EfbFca597C2"
 reseal_on_txs = "none"
@@ -253,5 +255,13 @@ reseal_on_txs = "none"
 ./target/release/openethereum --config node1.ok.toml
 ```
 
+建立 node0 与 node1 之间的网络连接
 
+```shell
+curl --data '{"jsonrpc":"2.0","method":"parity_enode","params":[],"id":0}' \
+     -H "Content-Type: application/json" -X POST localhost:8540
 
+## 用上个命令获取到的 node0 enode 信息，替换以下命令中的 RESULT ，执行后即可建立连接，控制台界面输出内容中可见 0/1/25 peers 字样。
+curl --data '{"jsonrpc":"2.0","method":"parity_addReservedPeer","params":["enode://RESULT"],"id":0}' \
+     -H "Content-Type: application/json" -X POST localhost:8541
+```

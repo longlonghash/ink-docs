@@ -3,11 +3,11 @@ title: Rust-Web3 应用示例
 slug: /rustweb3
 ---
 ### Reference
-[ganache-cli](https://github.com/trufflesuite/ganache-cli)
+- [ganache-cli](https://github.com/trufflesuite/ganache-cli)
 
-[rust-web3 readme](https://github.com/tomusdrw/rust-web3/blob/master/examples/readme.md)
+- [rust-web3 readme](https://github.com/tomusdrw/rust-web3/blob/master/examples/readme.md)
 
-[rust-web3 issues](https://github.com/tomusdrw/rust-web3/issues/195)
+- [rust-web3 issues](https://github.com/tomusdrw/rust-web3/issues/195)
 
 ### 操作步骤
 

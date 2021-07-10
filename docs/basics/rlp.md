@@ -4,7 +4,7 @@ slug: /rlp
 ---
 ### Reference
 
-[Ethereum Wiki](https://github.com/ethereum/wiki/wiki/RLP)
+- [Ethereum Wiki](https://github.com/ethereum/wiki/wiki/RLP)
 
 ### RLP (Recursive Length Prefix)
 
