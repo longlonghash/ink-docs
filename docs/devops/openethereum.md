@@ -37,7 +37,7 @@ cargo +nightly-2020-10-06 build --release --features final
 
 > 搭建过程分为两大部分：准备阶段，运行阶段。在准备阶段用到的所有配置文件，是为了临时启动节点，创建账户与密钥，账户地址信息需填写到运行阶段的新配置文件中（文件名含 ok 字样）。
 > 
-> 所有配置文件，可执行 git clone https://github.com/longlonghash/openethereum-poa-demo.git 获取到。
+> 获取所有配置文件，可执行 git clone https://github.com/longlonghash/openethereum-poa-demo.git
 
 ### 准备阶段
 
