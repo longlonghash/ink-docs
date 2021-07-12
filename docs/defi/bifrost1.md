@@ -20,5 +20,5 @@ Polkadot公链在体系结构层面，设计了中继链与平行链机制，1�
 
 ### Bifrost提供流动性释放机制
 参与Staking和Slot竞拍，需锁定/质押系统代币（资产），用户在获得利息激励的同时，也丢失了流动性。在代币锁定期间，若代币价格大幅上涨，由于代币被锁定，无法取出进行交易，由此失去交易机会，若代币价格大幅下跌，由于代币被锁定，也来不及甩卖出去，导致资产亏损。Bifost项目针对这些问题，经过精心设计，为用户提供了既能参与Staking与Slot竞拍活动，又不失去资产流动性的能力，为用户提供了更灵活的资产管理与运作方式。其核心设计思想是：
-Bifrost网络自身是Polkadot的平行链，用户将代币（DOT）转移到Bifrost平行链。若参与Staking，Bifrost将发放vDOT凭证给用户,若参与Slot竞拍，Bifrost将发放vsDOT给用户，然后Bifrost按照用户的指示，将DOT锁定，参与Staking和Slot竞拍，过了锁定期限后，Polkadot中继链将回退锁定的本金到Bifost，用户再以vDOT和vsDOT作为凭证，赎回DOT本金。Biforst网络以去中心化的方式运行，以去中心化的方式管理资金，共享Polkadot中继链提供的共识安全，用户无需担心资金安全问题。Bifrost的体系结构与技术实现方案，会给出详细的讲述与分析。
+Bifrost网络自身是Polkadot的平行链，用户将代币（DOT）转移到Bifrost平行链。若参与Staking，Bifrost将发放vDOT凭证给用户,若参与Slot竞拍，Bifrost将发放vsDOT给用户，然后Bifrost按照用户的指示，将DOT锁定，参与Staking和Slot竞拍，过了锁定期限后，Polkadot中继链将回退锁定的本金到Bifost，用户再以vDOT和vsDOT作为凭证，赎回DOT本金。Biforst网络以去中心化的方式运行，以去中心化的方式管理资金，共享Polkadot中继链提供的共识安全，用户无需担心资金安全问题。Bifrost的体系结构与技术实现方案，后续会给出详细的讲述与分析。
 
