@@ -1,6 +1,6 @@
 ---
 title: Uniswap 与 X*Y=K
-slug: /uniswap
+slug: /uniswap1
 ---
 
 在Uniswap智能合约中，需维持X\*Y=K恒等式。由于流动性的增减变化，以及手续费的原因，K的值其实是不断变化的，但无论K的值如何变化，X\*Y=K始终成立。这是自动化做市商的智能合约实现方式之一，还有其他流行的算法实现，比如Balancer、Bancor等。
