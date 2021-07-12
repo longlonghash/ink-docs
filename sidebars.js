@@ -19,7 +19,8 @@ module.exports = {
       // 'getting-started/troubleshooting',
     ],
     'DeFi': [
-      'defi/uniswap'
+      'defi/uniswap',
+      'defi/curve1',
       // 'examples/overview',
     ],
     '公链架构': [
