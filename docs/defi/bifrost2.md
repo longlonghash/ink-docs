@@ -12,3 +12,24 @@ Polkadot采取了中继链与平行链协同工作的设计方案。多个平行
 
 ### 释放 Slot 竞拍锁定资金的流动性
 
+<img src="../picture/bifrost-salp-plo1.png" alt="How it Works" />
+
+<center>原始的 SLOT 竞拍交互时序图</center>
+
+<img src="../picture/bifrost-salp-plo2.png" alt="How it Works" />
+
+<center>通过Bifrost 平台进行 SLOT 竞拍的交互时序图</center>
+
+### 两个交易池（Swap Pool）的设计
+
+<img src="../picture/bifrost-salp-bancor1.png" alt="How it Works" />
+
+<center>vsDOT/vsKSM 承兑交互时序图</center>
+
+### 改造后的 Bancor 算法
+
+<img src="../picture/bifrost-salp-bancor2.png" alt="How it Works" />
+
+<center>vsDOT/vsKSM 承兑交互时序图</center>
+
+
