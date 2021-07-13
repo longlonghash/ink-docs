@@ -6,7 +6,7 @@ slug: /atomic
 
 思考一个问题：Alice 有 2 BTC，Bob 有 10 ETH，Alice 与 Bob 通过网络进行交易，互相并不认识，互相并不信任，如何在没有第三方担保与中介机构的情况下顺利完成交易？因为双方互不信任，所以没有人敢先发送交易到对方，因为接收方在收到资金后，可随时离线，不再做出任何回应。
 
-上述问题，这就是原子跨链交易问题（俗语：一手交钱、一手交货），即：交易要么完全成功，要么完全失败，在失败的情况下，不让任何参与者遭受资金损失。
+上述问题，这就是原子跨链交易问题（Atomic Cross-Chain Swap）（俗语：一手交钱、一手交货），即：交易要么完全成功，要么完全失败，在失败的情况下，不能让任何参与者遭受资金损失（交易上链手续费、Gas费，除外）。
 
 ### 哈希时间锁合约
 
@@ -33,6 +33,10 @@ Alice 必须先出示 secret (因为只有Alice知道 secret), 获得 10 ETH；
 Alice 出示 secret，Bob 也就获悉了 secret，由于 T1 > T2, Bob 有足够的时间去发送交易，出示 secret，获得 2 BTC，交易全部成功；
 
 Alice 一直不出示 secret，则等待时间 T2 之后，智能合约可自动回退 10 ETH 给 Bob，等到 T1 之后，系统也将自动回退 2 BTC 给 Alice，交易全部失败。
+
+<img src="../picture/atomic-swap-htlc.png" alt="How it Works" />
+
+<center>图片来自《A Game-Theoretic Analysis of Cross-Chain Atomic Swaps with HTLCs》</center>
 
 
 ### 简单总结

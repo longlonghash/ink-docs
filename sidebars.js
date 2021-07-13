@@ -22,6 +22,7 @@ module.exports = {
       'defi/uniswap1',
       'defi/curve1',
       'defi/bifrost1',
+      'defi/bifrost2',
       // 'examples/overview',
     ],
     '公链架构': [
