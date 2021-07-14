@@ -1,5 +1,5 @@
 ---
-title: Bifrost 的 SALP 设计方案
+title: Bifrost SALP 设计方案
 slug: /bifrost2
 ---
 

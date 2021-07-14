@@ -34,9 +34,13 @@ Alice 出示 secret，Bob 也就获悉了 secret，由于 T1 > T2, Bob 有足够
 
 Alice 一直不出示 secret，则等待时间 T2 之后，智能合约可自动回退 10 ETH 给 Bob，等到 T1 之后，系统也将自动回退 2 BTC 给 Alice，交易全部失败。
 
-<img src="../picture/atomic-swap-htlc.png" alt="How it Works" />
+<center> <img src="../picture/atomic-swap-htlc1.png" alt="How it Works" width = "60%" height = "60%" /> </center>
 
-<center>图片来自《A Game-Theoretic Analysis of Cross-Chain Atomic Swaps with HTLCs》</center>
+<center> 图片来自 Vitalik Buterin《Chain Interoperability》 </center>
+
+<center> <img src="../picture/atomic-swap-htlc2.png" alt="How it Works" width = "80%" height = "80%" /> </center>
+
+<center> 图片来自《A Game-Theoretic Analysis of Cross-Chain Atomic Swaps with HTLCs》 </center>
 
 
 ### 简单总结

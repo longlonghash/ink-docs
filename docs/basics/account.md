@@ -1,5 +1,5 @@
 ---
-title: 账户、密钥、地址
+title: 账户，密钥，地址
 slug: /account
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: RLP 编码
+title: RLP 数据编码
 slug: /rlp
 ---
 ### Reference
