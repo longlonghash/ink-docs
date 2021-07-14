@@ -22,7 +22,7 @@ cd rust-web3
 cargo run --example contract
 ```
 
-> Mac环境下报错，按如下方式改写examples/contract.rs的部分源代码，另外还需要修改/examples/res/contract_token.code，将文件尾部的空行删掉，然后可正常运行。Linux环境下，尚未测试。
+MacOS 环境下报错，按如下方式改写 examples/contract.rs 的部分源代码，另外还需要修改 examples/res/contract_token.code，将文件尾部的空行删掉，然后可正常运行。Linux 环境下，尚未测试。
 
 ```rust
 // Deploying a contract
