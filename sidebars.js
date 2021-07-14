@@ -72,7 +72,7 @@ module.exports = {
     '发明与设计': [
       // 'canvas/overview',
       // 'basics/storing-values',
-      'design/intro',
+      'design/myatomic',
     ],
     '其他有趣的领域': [
       // 'faq/faq',
