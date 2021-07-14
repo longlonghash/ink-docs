@@ -34,7 +34,7 @@ ContractA 的检测逻辑为：
 
 若 Alice 签名 ( Bob 签名( Y Acoin == X Bcoin ) ) 
 
-且 Bob 签名 ( Alice 签名( Y Acoin == X Bcoin ) ) 则对 Alice 的存款额度执行扣款，并转账给 B 。
+且 Bob 签名 ( Alice 签名( Y Acoin == X Bcoin ) ) 则对 Alice 的存款额度执行扣款，并转账给 Bob 。
 
 ContractB 的检测逻辑为：
 
