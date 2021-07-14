@@ -14,7 +14,7 @@ Polkadot采取了中继链与平行链协同工作的设计方案。多个平行
 
 投资者直接参与 Slot 竞拍、Crowdloan 活动，与通过 Bifrost SALP 方案进行 Slot 竞拍、Crowdloan 活动的流程对比如下:
 
-<img src="../picture/bifrost-salp-plo1.png" alt="How it Works" />
+<center> <img src="../picture/bifrost-salp-plo1.png" alt="How it Works" width = "90%" height = "90%" /> </center>
 
 <center>原始的 SLOT 竞拍交互时序图</center>
 
@@ -49,8 +49,8 @@ vsBond 代表具体的平行链及其竞拍成功的 Lease Period 。所以 vsBo
 
 ### 改造后的 Bancor 算法
 
-<img src="../picture/bifrost-salp-bancor2.png" alt="How it Works" />
+<center> <img src="../picture/bifrost-salp-bancor2.png" alt="How it Works" width = "80%" height = "80%" /> </center>
 
-<center>vsDOT/vsKSM 承兑交互时序图</center>
+<center>改造后的 Bancor 价格曲线</center>
 
 未完，待续...
