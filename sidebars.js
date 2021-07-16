@@ -35,7 +35,7 @@ module.exports = {
       // 'basics/cross-contract-calling',
       // 'basics/testing',
       // 'basics/env-functions',
-      'public/intro',
+      'public/p2p',
     ],
     '桥与跨链': [
       'bridge/atomic',
