@@ -21,6 +21,7 @@ Polkadot采取了中继链与平行链协同工作的设计方案。多个平行
 <img src="../picture/bifrost-salp-plo2.png" alt="How it Works" />
 
 <center>通过Bifrost 平台进行 SLOT 竞拍的交互时序图</center>
+ 
 
 从系统设计的顶层视图看，投资者用户通过 Bifrost 参与平行链项目的 PLO 众筹活动，Contribute 行为会分离解耦出两类 Token 资产：vsToken（vsDOT/vsKSM）与 vsBond。投资者贡献 x DOTs/KSMs，可获得 x vsDOTs/vsKSMs 与 x vsBond。
 
