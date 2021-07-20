@@ -1,5 +1,5 @@
 ---
-title: MMR，“消除”游戏的对立面
+title: MMR，追加与拱起的游戏
 slug: /mmr
 ---
 ### Reference
