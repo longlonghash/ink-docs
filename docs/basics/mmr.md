@@ -7,9 +7,9 @@ slug: /mmr
 - [OpenTimestamps](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md)
 - [Grin](https://docs.grin.mw/wiki/chain-state/merkle-mountain-range)
 
-### RLP (Recursive Length Prefix)
+### MMR (Merkle Mountain Range)
 
-在俄罗斯方块游戏中，只要界面中的小方块完整连续成一行，这一行就会被消除掉，游戏者和旁观者看到这一幕时，心情都会很舒适、很愉悦。也许我们读懂Merkle Mountain Range (MMR)的游戏规则之后，也会感到很愉悦，只不过MMR的规则不是消除，而是不断地在追加、拱起方块。具体的游戏规则是这样的：
+在俄罗斯方块游戏中，只要界面中的小方块完整连续成一行，这一行就会被消除掉，游戏者和旁观者看到这一幕时，心情都会很舒适、很愉悦。也许我们读懂 Merkle Mountain Range (MMR)的游戏规则之后，也会感到很愉悦，只不过MMR的规则不是消除，而是不断地在追加、拱起方块。具体的游戏规则是这样的：
 
 初始状态是一张白纸，什么内容也没有，现在开始从白纸底部第1行追加方块
 
