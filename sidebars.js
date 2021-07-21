@@ -69,6 +69,7 @@ module.exports = {
       // 'datastructures/opting-out',
       'devops/rustweb3',
       'devops/openethereum',
+      'devops/rusttron',
     ],
     '发明与设计': [
       // 'canvas/overview',

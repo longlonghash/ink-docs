@@ -55,9 +55,9 @@ MMR_ROOT = HASH(PEAK_14 | HASH(PEAK_13 | HASH(PEAK_17 | PEAK_18)))
 
 若将这些方块按编号依次排放到一行，并在下一行的对应位置写下每一个方块的高度，可得：
 
-0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
+0&nbsp&nbsp1&nbsp&nbsp2&nbsp&nbsp3&nbsp&nbsp4&nbsp&nbsp5&nbsp&nbsp6&nbsp&nbsp7&nbsp&nbsp8&nbsp&nbsp9&nbsp10&nbsp11&nbsp12&nbsp13&nbsp14&nbsp15&nbsp16&nbsp17&nbsp18
 
-0  0  1  0  0  1  2  0  0  1  0  0  1  2  3  0  0  1  0
+0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp&nbsp2&nbsp&nbsp0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp&nbsp2&nbsp&nbsp3&nbsp&nbsp0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp&nbsp0
 
 若每个小方块，不依次编号，直接用其对应的高度进行表示，可直接得出第2行的高度数字序列：
 
