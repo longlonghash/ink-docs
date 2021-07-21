@@ -4,7 +4,7 @@ slug: /rusttron
 ---
 ### Reference
 
-- [rust-tron readme](https://github.com/andelf/rust-tron/readme.md)
+- [rust-tron readme](https://github.com/andelf/rust-tron)
 
 ### 操作步骤
 
