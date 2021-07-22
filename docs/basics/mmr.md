@@ -51,8 +51,12 @@ L1&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5&nbsp&
 
 L0&nbsp&nbsp&nbsp&nbsp0&nbsp&nbsp&nbsp1&nbsp&nbsp&nbsp3&nbsp&nbsp&nbsp4&nbsp&nbsp&nbsp7&nbsp&nbsp&nbsp8&nbsp&nbsp&nbsp10&nbsp&nbsp&nbsp11&nbsp&nbsp&nbsp15&nbsp&nbsp&nbsp16&nbsp&nbsp&nbsp18
 
+### MMR Root 哈希值
 MMR_ROOT = HASH(PEAK_14 | HASH(PEAK_13 | HASH(PEAK_17 | PEAK_18)))
 
+MMR 和普通的 Merkle Tree 在证明和验证方面，区别并不大，但 MMR 支持持续追加新的叶子节点，Merkle Tree 则需提前设定好叶子节点的数量。MMR 可显著减少从一个区块链系统递交到另一个区块链系统上的区块头数量，便于实现跨链交互过程中的证明与验证。
+
+### 换个角度思考
 若将这些方块按编号依次排放到一行，并在下一行的对应位置写下每一个方块的高度，可得：
 
 0&nbsp&nbsp1&nbsp&nbsp2&nbsp&nbsp3&nbsp&nbsp4&nbsp&nbsp5&nbsp&nbsp6&nbsp&nbsp7&nbsp&nbsp8&nbsp&nbsp9&nbsp10&nbsp11&nbsp12&nbsp13&nbsp14&nbsp15&nbsp16&nbsp17&nbsp18
