@@ -37,7 +37,7 @@ module.exports = {
       // 'basics/testing',
       // 'basics/env-functions',
       'public/p2p',
-      'public/kad',
+      'public/kademlia',
     ],
     '桥与跨链': [
       'bridge/atomic',
