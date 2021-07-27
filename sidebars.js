@@ -22,6 +22,7 @@ module.exports = {
     'DeFi': [
       'defi/uniswap1',
       'defi/curve1',
+      'defi/balancer1',
       'defi/bifrost1',
       'defi/bifrost2',
       // 'examples/overview',
