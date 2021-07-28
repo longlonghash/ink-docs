@@ -12,6 +12,7 @@ module.exports = {
       'basics/ss58',
       'basics/rlp',
       'basics/mmr',
+      'basics/mpt',
       // 'getting-started/creating',
       // 'getting-started/compiling',
       // 'getting-started/running',
