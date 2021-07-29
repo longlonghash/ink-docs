@@ -73,8 +73,9 @@ module.exports = {
       // 'canvas/overview',
       // 'datastructures/opting-out',
       'devops/rustweb3',
-      'devops/openethereum',
       'devops/rusttron',
+      'devops/openethereum',
+      'devops/besu',
     ],
     '发明与设计': [
       // 'canvas/overview',
