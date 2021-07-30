@@ -3,8 +3,6 @@ title: Railway 区块链通用精简框架
 slug: /railway
 ---
 
-### Railway 项目简介
-
 <center> <img src="../picture/railway1.jpeg" alt="How it Works" width = "90%" height = "90%" /> </center>
 
 <center> Railway 系统架构示意图（图中箭头指向，表示数据流的方向） </center>
