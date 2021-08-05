@@ -43,6 +43,7 @@ module.exports = {
       'public/devp2p',
       'public/kademlia',
       'public/railway',
+      'public/economic',
     ],
     '桥与跨链': [
       'bridge/atomic',
