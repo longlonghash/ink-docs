@@ -13,6 +13,7 @@ module.exports = {
       'basics/rlp',
       'basics/mmr',
       'basics/mpt',
+      'basics/pbft',
       // 'getting-started/creating',
       // 'getting-started/compiling',
       // 'getting-started/running',
