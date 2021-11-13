@@ -39,6 +39,7 @@ module.exports = {
       // 'basics/cross-contract-calling',
       // 'basics/testing',
       // 'basics/env-functions',
+      'public/pospow',
       'public/p2p',
       'public/libp2p',
       'public/devp2p',
