@@ -40,6 +40,7 @@ module.exports = {
       // 'basics/testing',
       // 'basics/env-functions',
       'public/pospow',
+      'public/contract',
       'public/p2p',
       'public/libp2p',
       'public/devp2p',
