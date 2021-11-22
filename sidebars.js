@@ -72,7 +72,7 @@ module.exports = {
       // 'datastructures/dynamic-allocation',
     ],
     '虚拟机（VM）': [
-      'vm/intro',
+      'vm/evmshell',
       // 'canvas/overview',
     ],
     '开发运维（DevOps）': [
