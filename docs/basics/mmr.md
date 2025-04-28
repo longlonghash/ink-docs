@@ -2,14 +2,10 @@
 title: MMR，追加与拱起的游戏
 slug: /mmr
 ---
-### Reference
-
-- [OpenTimestamps](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md)
-- [Grin](https://docs.grin.mw/wiki/chain-state/merkle-mountain-range)
 
 ### MMR (Merkle Mountain Range)
 
-在俄罗斯方块游戏中，只要界面中的小方块完整连续成一行，这一行就会被消除掉，游戏者和旁观者看到这一幕时挺解压，心情都会很舒适、很愉悦。若我们读懂Merkle Mountain Range (MMR)的游戏规则之后，同样会感到很愉悦，只不过MMR的规则不是消除，而是不断地在追加、拱起方块。游戏的具体规则是这样的：
+在俄罗斯方块游戏中，只要界面中的小方块凑齐完整的一行，这一行就会被消除掉，游戏者和旁观者看到这一幕时会感到挺解压，心情都会很舒适、很愉悦。若我们读懂Merkle Mountain Range (MMR)的游戏规则之后，同样会感到很愉悦，只不过MMR的规则不是消除，而是不断地在追加、拱起方块。游戏的具体规则是这样的：
 
 初始状态是一张白纸，什么内容也没有，现在开始从白纸底部第0行追加方块
 
@@ -21,7 +17,7 @@ slug: /mmr
 ```markdown
 0   1
 ```
-方块0和方块1都排在第0行，所以方块0和方块1的高度都是0，MMR的规则设定了白纸中的任意一行只要[新出现]两个相同高度的方块，这两个方块就要拱起生成一个新的方块放置在上方，于是白纸当前的状态变为：
+**方块0**和**方块1**都排在第0行，所以他们的高度都是0，MMR的规则设定了白纸中的任意一行只要**新出现**两个相同高度的方块，这两个方块就要拱起生成一个新的方块放置在上方，于是白纸当前的状态变为：
 ```markdown
   2
 
@@ -55,14 +51,14 @@ L0    0   1   3   4   7   8   10   11   15   16   18
 
 ### MMR Root 哈希值
 节点添加与上拱的过程，就像地壳板块碰撞，持续创造出拱起的山峰一样，由此得名MMR。
-MMR 根哈希值的计算过程：从第0层开始，收集每一层最后一个落单的节点（Peak，峰顶），错层配对后接着上拱，得到：
+MMR根哈希值的计算过程：从第0层开始，收集每一层最后一个落单的节点（Peak，峰顶），错层配对后接着上拱，得到：
 
 Root = Hash(Peak14, Hash(Peak13, Hash(Peak17, Peak18)))
 
 MMR和普通的Merkle Tree在证明和验证方面，区别并不大，但MMR支持持续追加新叶子节点，Merkle Tree则需提前固定叶子节点数量。MMR可显著减少从一个区块链系统递交到另一个区块链系统上的区块头数量，便于实现跨链交互过程中的证明与验证。
 
 ### 换个角度思考
-若将这 19 个方块按编号（0～18）依次排放到第 1 行，并在第 2 行写下每个方块所处的层次高度，可得：
+若将这19个方块按编号（0～18）依次排放到第1行，并在第2行写下每个方块所处的层次高度，可得：
 
 ```markdown
 编号/index => 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
@@ -96,3 +92,8 @@ MMR和普通的Merkle Tree在证明和验证方面，区别并不大，但MMR支
 0010012001001230010 （追加1个，对应的结构状态）
 ```
 现在我们已经不难理解：若将第0层依次添加的每个方块，都看作是一个block或block_header，那么随着区块按序增长，整个区块链账本就可以用MMR表达出来。
+
+### 参考资料
+
+- [Grin](https://docs.grin.mw/wiki/chain-state/merkle-mountain-range)
+- [OpenTimestamps](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md)
