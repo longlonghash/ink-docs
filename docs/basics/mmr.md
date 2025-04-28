@@ -9,81 +9,90 @@ slug: /mmr
 
 ### MMR (Merkle Mountain Range)
 
-在俄罗斯方块游戏中，只要界面中的小方块完整连续成一行，这一行就会被消除掉，游戏者和旁观者看到这一幕时，心情都会很舒适、很愉悦。也许我们读懂 Merkle Mountain Range (MMR)的游戏规则之后，也会感到很愉悦，只不过MMR的规则不是消除，而是不断地在追加、拱起方块。具体的游戏规则是这样的：
+在俄罗斯方块游戏中，只要界面中的小方块完整连续成一行，这一行就会被消除掉，游戏者和旁观者看到这一幕时挺解压，心情都会很舒适、很愉悦。若我们读懂Merkle Mountain Range (MMR)的游戏规则之后，同样会感到很愉悦，只不过MMR的规则不是消除，而是不断地在追加、拱起方块。游戏的具体规则是这样的：
 
-初始状态是一张白纸，什么内容也没有，现在开始从白纸底部第1行追加方块
+初始状态是一张白纸，什么内容也没有，现在开始从白纸底部第0行追加方块
 
 追加一个方块，在纸上记下 0
-
+```markdown
 0
-
+```
 追加一个方块：在纸上记下 1
+```markdown
+0   1
+```
+方块0和方块1都排在第0行，所以方块0和方块1的高度都是0，MMR的规则设定了白纸中的任意一行只要[新出现]两个相同高度的方块，这两个方块就要拱起生成一个新的方块放置在上方，于是白纸当前的状态变为：
+```markdown
+  2
 
-0&nbsp&nbsp&nbsp1
-
-方块0 和 方块1 都排在第 1 行，所以方块0 和 方块1 的高度都是 1，MMR的规则设定了白纸中的任意一行只要[新出现]两个相同高度的方块，这两个方块就要拱起生成一个新的方块放置在上方，于是白纸当前的状态变为：
-
-&nbsp&nbsp2
-
-0&nbsp&nbsp&nbsp1  （0与1拱起2）
-
+0   1 （0与1拱起2）
+```
 追加一个方块：在纸上记下 3
+```markdown
+  2
 
-&nbsp&nbsp2
-
-0&nbsp&nbsp&nbsp1&nbsp&nbsp&nbsp3
-
+0   1   3
+```
 追加一个方块：在纸上记下 4
+```markdown
+      6
 
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp6
+  2       5 （2与5拱起6）
 
-&nbsp&nbsp2&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5（2与5拱起6）
-
-0&nbsp&nbsp&nbsp1&nbsp&nbsp&nbsp3&nbsp&nbsp&nbsp4 （3与4拱起 5）
-
+0   1   3   4 （3与4拱起5）
+```
 持续追加到白纸上出现19个方块（0～18），对应的图案模式应该是：
 
-L3&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp14
+```markdown
+L3                   14
 
-L2&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp6&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp13
+L2           6                13
 
-L1&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp9&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp12&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp17
+L1       2       5        9        12        17
 
-L0&nbsp&nbsp&nbsp&nbsp0&nbsp&nbsp&nbsp1&nbsp&nbsp&nbsp3&nbsp&nbsp&nbsp4&nbsp&nbsp&nbsp7&nbsp&nbsp&nbsp8&nbsp&nbsp&nbsp10&nbsp&nbsp&nbsp11&nbsp&nbsp&nbsp15&nbsp&nbsp&nbsp16&nbsp&nbsp&nbsp18
+L0    0   1   3   4   7   8   10   11   15   16   18
+```
 
 ### MMR Root 哈希值
-MMR_ROOT = HASH(PEAK_14 | HASH(PEAK_13 | HASH(PEAK_17 | PEAK_18)))
+节点添加与上拱的过程，就像地壳板块碰撞，持续创造出拱起的山峰一样，由此得名MMR。
+MMR 根哈希值的计算过程：从第0层开始，收集每一层最后一个落单的节点（Peak，峰顶），错层配对后接着上拱，得到：
 
-MMR 和普通的 Merkle Tree 在证明和验证方面，区别并不大，但 MMR 支持持续追加新的叶子节点，Merkle Tree 则需提前设定好叶子节点的数量。MMR 可显著减少从一个区块链系统递交到另一个区块链系统上的区块头数量，便于实现跨链交互过程中的证明与验证。
+Root = Hash(Peak14, Hash(Peak13, Hash(Peak17, Peak18)))
+
+MMR和普通的Merkle Tree在证明和验证方面，区别并不大，但MMR支持持续追加新叶子节点，Merkle Tree则需提前固定叶子节点数量。MMR可显著减少从一个区块链系统递交到另一个区块链系统上的区块头数量，便于实现跨链交互过程中的证明与验证。
 
 ### 换个角度思考
-若将这些方块按编号依次排放到一行，并在下一行的对应位置写下每一个方块的高度，可得：
+若将这 19 个方块按编号（0～18）依次排放到第 1 行，并在第 2 行写下每个方块所处的层次高度，可得：
 
-0&nbsp&nbsp1&nbsp&nbsp2&nbsp&nbsp3&nbsp&nbsp4&nbsp&nbsp5&nbsp&nbsp6&nbsp&nbsp7&nbsp&nbsp8&nbsp&nbsp9&nbsp10&nbsp11&nbsp12&nbsp13&nbsp14&nbsp15&nbsp16&nbsp17&nbsp18
+```markdown
+编号/index => 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
 
-0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp&nbsp2&nbsp&nbsp0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp&nbsp2&nbsp&nbsp3&nbsp&nbsp0&nbsp&nbsp0&nbsp&nbsp1&nbsp&nbsp&nbsp0
+层高/value => 0  0  1  0  0  1  2  0  0  1  0  0  1  2  3  0  0  1  0
+```
+若每个小方块，不依次编号，直接用其对应的高度进行表示，第0层节点计作0，第1层节点计作1，以此类推，可直接得出第2行的高度数字序列，这在本质上就是将整个层次或树结构，压缩到一个数组（向量）中：编号对应元素下标（index），层高对应元素值（value）。
 
-若每个小方块，不依次编号，直接用其对应的高度进行表示，可直接得出第2行的高度数字序列：
+```markdown
 
-0 追加1个
+0 （追加1个，对应的结构状态）
 
-00 => 001 追加1个，拱起1次
+00 => 001 （追加1个，紧接着拱起1次，对应的结构状态）
 
-0010 追加1个
+0010 （追加1个，对应的状态）
 
-00100 => 001001 => 0010012 追加1个，拱起2次
+00100 => 001001 => 0010012 （追加1个，紧接着拱起2次，对应的结构状态）
 
-00100120 追加1个
+00100120 （追加1个，对应的结构状态）
 
-001001200 => 0010012001 追加1个，拱起1次
+001001200 => 0010012001 （追加1个，紧接着拱起1次，对应的结构状态）
 
-00100120010 追加1个
+00100120010 （追加1个，对应的结构状态）
 
-001001200100 => 0010012001001 => 00100120010012 => 001001200100123 追加1个，拱起3次
+001001200100 => 0010012001001 => 00100120010012 => 001001200100123 （追加1个，紧接着拱起3次，对应的结构状态）
 
-0010012001001230 追加1个
+0010012001001230 （追加1个，对应的结构状态）
 
-00100120010012300 => 001001200100123001 追加1个，拱起1次
+00100120010012300 => 001001200100123001 （追加1个，紧接着拱起1次，对应的结构状态）
 
-0010012001001230010 追加1个
-
+0010012001001230010 （追加1个，对应的结构状态）
+```
+现在我们已经不难理解：若将第0层依次添加的每个方块，都看作是一个block或block_header，那么随着区块按序增长，整个区块链账本就可以用MMR表达出来。
