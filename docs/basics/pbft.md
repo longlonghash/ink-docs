@@ -4,6 +4,7 @@ slug: /pbft
 ---
 
 ### 错误的证明
+
 PBFT 共识算法要求总节点数量 N >= 3F+1，这里给出一个简洁证明。 假设恶意节点数量为 F， 则有：
 
 1、N-F > F 是必须的，这是很明显的，因为大多数人都认同，才能称之为共识，所以诚实节点数量必须大于恶意节点数量；
@@ -33,4 +34,18 @@ N个节点中有F个故障/宕机，那么剩余N - F个节点数，要超过故
 当N = 3F + 1时，就意味着系统刚好可以容忍F个宕机、F个作恶，而剩余F+1个正常工作。
 
 这里最关键、最核心的点，就是必须领悟：为什么这里假设有F个故障节点，就刚好要取值F个作恶节点。
+
+### 关键词
+
+脑裂、分区、CAP理论、Raft、Paxos、CFT、BFT、PBFT、PoW、PoS
+
+https://raft.github.io
+
+https://github.com/ongardie/raftscope
+
+https://github.com/TheDhejavu/raft-consensus
+
+https://github.com/tikv/raft-rs
+
+https://fisco-bcos-doc.readthedocs.io/zh-cn/latest/docs/design/consensus/raft.html
 
